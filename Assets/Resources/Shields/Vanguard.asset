@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb1477206e9e940fa9064e5e37e25a8d, type: 3}
+  m_Name: Vanguard
+  m_EditorClassIdentifier: 
+  itemType: 3
+  rarity: 1
+  spriteNatural: {fileID: 21300000, guid: 4536c931eb09a431cb04dd8645befc3f, type: 3}
+  spriteHighlighted: {fileID: 21300000, guid: 4536c931eb09a431cb04dd8645befc3f, type: 3}
+  itemName: Vanguard
+  description: Powerfull shield
+  maxSize: 1
+  commonWorth: 2200
+  maxFatigue: -10
+  condition: 100
+  repairingCost: 2
+  rangeDeff: 25
+  meleeDeff: 20

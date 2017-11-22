@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a84060f2a73242fb8ce5130739caf34, type: 3}
+  m_Name: StuffItem2
+  m_EditorClassIdentifier: 
+  itemType: 8
+  rarity: 1
+  spriteNatural: {fileID: 21300000, guid: 388fe783ab85e483e885a7d09aefa678, type: 3}
+  spriteHighlighted: {fileID: 21300000, guid: 388fe783ab85e483e885a7d09aefa678, type: 3}
+  itemName: Fire shard
+  description: Fire shard
+  maxSize: 1
+  commonWorth: 0
