@@ -79,10 +79,13 @@ public abstract class ItemManagerBase : MonoBehaviour {
 	///call equip method for equipment item
 	private void DragSwap(Slot from, Slot to)
 	{
-		if (to.Items.Count == 0 || from.CurrentItem.itemType != to.CurrentItem.itemType)
-			from.Items.Peek().Use(from, from.CurrentItem);
-			else
-				Slot.SwapItems(from, to);
+		if (from.CurrentItem.itemType != ItemType.Consumeable)
+		{
+			if (to.Items.Count == 0 || from.CurrentItem.itemType != to.CurrentItem.itemType)
+				from.Items.Peek().Use(from, from.CurrentItem);
+				else
+					Slot.SwapItems(from, to);
+		}
 	}
 
 	protected void CreateHoverIcon()

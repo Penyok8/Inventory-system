@@ -70,6 +70,7 @@
      <Compile Include="Assets\Scripts\ScriptableObjectScripts\Equipment.cs" />
      <Compile Include="Assets\Scripts\ScriptableObjectScripts\Item.cs" />
      <Compile Include="Assets\Scripts\ScriptableObjectScripts\Shield.cs" />
+     <Compile Include="Assets\Scripts\ScriptableObjectScripts\Stuff.cs" />
      <Compile Include="Assets\Scripts\ScriptableObjectScripts\Weapon.cs" />
      <Compile Include="Assets\Scripts\Squad.cs" />
      <Compile Include="Assets\Trash\EquipmentSlot.cs" />

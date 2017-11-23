@@ -154,11 +154,22 @@ public class Slot : MonoBehaviour, IPointerClickHandler {
 	{
 		if (!IsEmpty)
 		{
-			Equipment equipmentItem = (Equipment)items.Peek();
-			equipmentItem.UnEquipItem(this, this.CurrentItem);
-			if (IsEmpty)
+			if (items.Peek().itemType != ItemType.Consumeable)
 			{
-				ChangeSprite(slotEmpty, slotHighligted);
+				if (items.Peek().itemType == ItemType.Stuff)
+				{
+					Consumable consumableItem = (Consumable)items.Peek();
+					consumableItem.UnEquipItem(this, this.CurrentItem);
+				}
+				else
+				{
+					Equipment equipmentItem = (Equipment)items.Peek();
+					equipmentItem.UnEquipItem(this, this.CurrentItem);
+				}				
+				if (IsEmpty)
+				{
+					ChangeSprite(slotEmpty, slotHighligted);
+				}
 			}
 		}
 	}

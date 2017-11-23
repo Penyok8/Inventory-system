@@ -51,11 +51,38 @@ public class CharacterPanel : ItemManagerBase
 
 	public override void SaveInventory()
 	{
+		string content = string.Empty;
 
+		for (int i = 0; i < equipmentSlots.Length; i++)
+		{
+			Slot tmp = equipmentSlots[i].GetComponent<Slot>();
+
+			if (!tmp.IsEmpty)
+			{
+				content += i + "-" + tmp.CurrentItem.itemName + "-" + tmp.Items.Count.ToString() + ";";
+			}
+		}
+		PlayerPrefs.SetString(gameObject.name +  "content", content);
+		PlayerPrefs.Save();
 	}
 	public override void LoadInventory()
 	{
+		string content = PlayerPrefs.GetString(gameObject.name +  "content");
+		string[] splitContent = content.Split(';');
+		for (int x = 0; x < splitContent.Length - 1; x++)
+		{
+			string[] splitValues = splitContent[x].Split('-');
+			int index = Int32.Parse(splitValues[0]);
+			string itemName = splitValues[1];
+			int amount = Int32.Parse(splitValues[2]);
 
+			Item tmpItem = null;
+			for (int i = 0; i < amount; i++)
+			{
+				tmpItem = ItemsContainer.Instance.FindItemByName(itemName);
+				equipmentSlots[index].GetComponent<Slot>().AddItem(tmpItem);
+			}
+		}
 	}
 	public void EquipItem(Slot slot, Item item)
 	{
@@ -102,7 +129,7 @@ public class CharacterPanel : ItemManagerBase
 		}
 	  	//if itemtype Stuff or GenericWeapon
 		//all slots of stuff or GenericWeapones are occupied by items or twohand weapon equiped?
-		if (!TryEquipInEachSlot(tmp, item, slot))
+		if (!TryEquipInEachSlot(tmp, item, slot) && item.itemType != ItemType.Consumeable)
 		{
 			Slot.SwapItems(slot, tmp[0]);
 			return;

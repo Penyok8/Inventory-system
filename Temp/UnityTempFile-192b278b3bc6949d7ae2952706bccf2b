@@ -173,6 +173,7 @@
 'Assets/Scripts/ScriptableObjectScripts/Equipment.cs'
 'Assets/Scripts/ScriptableObjectScripts/Item.cs'
 'Assets/Scripts/ScriptableObjectScripts/Shield.cs'
+'Assets/Scripts/ScriptableObjectScripts/Stuff.cs'
 'Assets/Scripts/ScriptableObjectScripts/Weapon.cs'
 'Assets/Scripts/Squad.cs'
 'Assets/Trash/EquipmentSlot.cs'

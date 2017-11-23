@@ -112,6 +112,8 @@ public class InventoryManager : MonoBehaviour
 		{
 			inventory.GetComponent<Inventory>().SaveInventory();
 		}
+		GameObject charPannel = GameObject.FindGameObjectWithTag("CharacterPanel");
+		charPannel.GetComponent<CharacterPanel>().SaveInventory();
 	}
 
 	public void Load()
@@ -121,5 +123,7 @@ public class InventoryManager : MonoBehaviour
 		{
 			inventory.GetComponent<Inventory>().LoadInventory();
 		}
+		GameObject charPannel = GameObject.FindGameObjectWithTag("CharacterPanel");
+		charPannel.GetComponent<CharacterPanel>().LoadInventory();
 	}
 }
