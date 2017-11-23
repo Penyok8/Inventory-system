@@ -67,6 +67,14 @@ public class CharacterPanel : ItemManagerBase
 	}
 	public override void LoadInventory()
 	{
+		for (int i = 0; i < equipmentSlots.Length; i++)
+		{
+			if (equipmentSlots[i].Items.Count> 0)
+			{
+				equipmentSlots[i].ClearSlot();
+				//UnEquipItem(equipmentSlots[i], equipmentSlots[i].Items.Peek());
+			}
+		}
 		string content = PlayerPrefs.GetString(gameObject.name +  "content");
 		string[] splitContent = content.Split(';');
 		for (int x = 0; x < splitContent.Length - 1; x++)
